@@ -47,11 +47,12 @@
         <context:exclude-filter expression=".*_Roo_.*" type="regex"/>
         <context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
     </context:component-scan>
-    <bean class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" id="dataSource">
-        <property name="driverClassName" value="${database.driverClassName}"/>
-        <property name="url" value="${database.url}"/>
-        <property name="username" value="${database.username}"/>
-        <property name="password" value="${database.password}"/>
+    
+    <bean class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" id="dataSource1">
+        <property name="driverClassName" value="${database.driverClassName1}"/>
+        <property name="url" value="${database.url1}"/>
+        <property name="username" value="${database.username1}"/>
+        <property name="password" value="${database.password1}"/>
         <property name="testOnBorrow" value="true"/>
         <property name="testOnReturn" value="true"/>
         <property name="testWhileIdle" value="true"/>
@@ -60,12 +61,34 @@
         <property name="minEvictableIdleTimeMillis" value="1800000"/>
         <property name="validationQuery" value="SELECT 1"/>
     </bean>
-    <bean class="org.springframework.orm.jpa.JpaTransactionManager" id="transactionManager">
-        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    <bean class="org.springframework.orm.jpa.JpaTransactionManager" id="transactionManager1">
+        <property name="entityManagerFactory" ref="entityManagerFactory1"/>
     </bean>
-    <tx:annotation-driven mode="aspectj" transaction-manager="transactionManager"/>
-    <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory">
-        <property name="persistenceUnitName" value="persistenceUnit"/>
-        <property name="dataSource" ref="dataSource"/>
+    <tx:annotation-driven mode="aspectj" transaction-manager="transactionManager1"/>
+    <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory1">
+        <property name="persistenceUnitName" value="persistenceUnit1"/>
+        <property name="dataSource" ref="dataSource1"/>
+    </bean>
+    
+    <bean class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" id="dataSource2">
+        <property name="driverClassName" value="${database.driverClassName2}"/>
+        <property name="url" value="${database.url2}"/>
+        <property name="username" value="${database.username2}"/>
+        <property name="password" value="${database.password2}"/>
+        <property name="testOnBorrow" value="true"/>
+        <property name="testOnReturn" value="true"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="timeBetweenEvictionRunsMillis" value="1800000"/>
+        <property name="numTestsPerEvictionRun" value="3"/>
+        <property name="minEvictableIdleTimeMillis" value="1800000"/>
+        <property name="validationQuery" value="SELECT 1"/>
+    </bean>
+    <bean class="org.springframework.orm.jpa.JpaTransactionManager" id="transactionManager2">
+        <property name="entityManagerFactory" ref="entityManagerFactory2"/>
+    </bean>
+    <tx:annotation-driven mode="aspectj" transaction-manager="transactionManager2"/>
+    <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory2">
+        <property name="persistenceUnitName" value="persistenceUnit2"/>
+        <property name="dataSource" ref="dataSource2"/>
     </bean>
 </beans>

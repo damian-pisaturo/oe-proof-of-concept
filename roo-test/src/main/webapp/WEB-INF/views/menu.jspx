@@ -13,5 +13,9 @@
         <menu:category id="c_admin">
             <menu:item id="i_admin_settings" messageCode="admin_menu_settings" url="/admin/settings.xhtml"/>
         </menu:category>
+        <menu:category id="c_zipcode" z="mUsujaVZZGMoiJipZL0vmR/PmqM=">
+            <menu:item id="i_zipcode_new" messageCode="global_menu_new" url="/zipcodes?form" z="eP9tElgh6YJlpvj5eG1LUdq6HLY="/>
+            <menu:item id="i_zipcode_list" messageCode="global_menu_list" url="/zipcodes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="C2ngNf5QxQlWfxCl0T1B1/d7zu0="/>
+        </menu:category>
     </menu:menu>
 </div>

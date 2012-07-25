@@ -12,6 +12,7 @@
         <intercept-url pattern="/" access="permitAll" />
         <intercept-url pattern="/login" access="permitAll" />
         <intercept-url pattern="/customers/**" access="permitAll" />
+        <intercept-url pattern="/zipcodes/**" access="permitAll" />
         <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/choices/**" access="hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/member/**" access="isAuthenticated()" />

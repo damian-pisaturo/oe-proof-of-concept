@@ -4,6 +4,7 @@
 package com.crmco.crm.web;
 
 import com.crmco.crm.model.Customer;
+import com.crmco.crm.model.ZipCode;
 import com.crmco.crm.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
@@ -37,10 +38,37 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<ZipCode, String> ApplicationConversionServiceFactoryBean.getZipCodeToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.crmco.crm.model.ZipCode, java.lang.String>() {
+            public String convert(ZipCode zipCode) {
+                return new StringBuilder().append(zipCode.getCode()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, ZipCode> ApplicationConversionServiceFactoryBean.getIdToZipCodeConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.crmco.crm.model.ZipCode>() {
+            public com.crmco.crm.model.ZipCode convert(java.lang.Long id) {
+                return ZipCode.findZipCode(id);
+            }
+        };
+    }
+    
+    public Converter<String, ZipCode> ApplicationConversionServiceFactoryBean.getStringToZipCodeConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.crmco.crm.model.ZipCode>() {
+            public com.crmco.crm.model.ZipCode convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), ZipCode.class);
+            }
+        };
+    }
+    
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(getCustomerToStringConverter());
         registry.addConverter(getIdToCustomerConverter());
         registry.addConverter(getStringToCustomerConverter());
+        registry.addConverter(getZipCodeToStringConverter());
+        registry.addConverter(getIdToZipCodeConverter());
+        registry.addConverter(getStringToZipCodeConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {

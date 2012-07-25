@@ -3,69 +3,69 @@
 
 package com.crmco.crm.model;
 
-import com.crmco.crm.model.Customer;
+import com.crmco.crm.model.ZipCode;
 import java.util.List;
 import javax.persistence.EntityManager;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect Customer_Roo_Jpa_ActiveRecord {
+privileged aspect ZipCode_Roo_Jpa_ActiveRecord {
     
-    public static final EntityManager Customer.entityManager() {
-        EntityManager em = new Customer().entityManager;
+    public static final EntityManager ZipCode.entityManager() {
+        EntityManager em = new ZipCode().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long Customer.countCustomers() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Customer o", Long.class).getSingleResult();
+    public static long ZipCode.countZipCodes() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM ZipCode o", Long.class).getSingleResult();
     }
     
-    public static List<Customer> Customer.findAllCustomers() {
-        return entityManager().createQuery("SELECT o FROM Customer o", Customer.class).getResultList();
+    public static List<ZipCode> ZipCode.findAllZipCodes() {
+        return entityManager().createQuery("SELECT o FROM ZipCode o", ZipCode.class).getResultList();
     }
     
-    public static Customer Customer.findCustomer(Long id) {
+    public static ZipCode ZipCode.findZipCode(Long id) {
         if (id == null) return null;
-        return entityManager().find(Customer.class, id);
+        return entityManager().find(ZipCode.class, id);
     }
     
-    public static List<Customer> Customer.findCustomerEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Customer o", Customer.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<ZipCode> ZipCode.findZipCodeEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM ZipCode o", ZipCode.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional
-    public void Customer.persist() {
+    public void ZipCode.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void Customer.remove() {
+    public void ZipCode.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Customer attached = Customer.findCustomer(this.id);
+            ZipCode attached = ZipCode.findZipCode(this.id);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void Customer.flush() {
+    public void ZipCode.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void Customer.clear() {
+    public void ZipCode.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public Customer Customer.merge() {
+    public ZipCode ZipCode.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        Customer merged = this.entityManager.merge(this);
+        ZipCode merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }
