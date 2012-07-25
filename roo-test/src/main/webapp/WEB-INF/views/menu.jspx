@@ -13,8 +13,5 @@
         <menu:category id="c_admin">
             <menu:item id="i_admin_settings" messageCode="admin_menu_settings" url="/admin/settings.xhtml"/>
         </menu:category>
-<!--         <menu:category id="c_api_calls"> -->
-<!--             <menu:item id="i_api_customers" messageCode="api_menu_customers" url="/customers?api"/> -->
-<!--         </menu:category> -->
     </menu:menu>
 </div>
