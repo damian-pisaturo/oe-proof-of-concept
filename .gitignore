@@ -16,4 +16,5 @@ target
 *.ear
 
 log.roo
+.DS_Store
 
