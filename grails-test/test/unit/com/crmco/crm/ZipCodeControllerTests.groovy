@@ -1,17 +1,21 @@
 package com.crmco.crm
 
-
-
-import grails.test.mixin.*
-import org.junit.*
+import grails.test.mixin.support.*
 
 /**
- * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
+ * See the API for {@link grails.test.mixin.support.GrailsUnitTestMixin} for usage instructions
  */
-@TestFor(ZipCodeController)
+@TestMixin(GrailsUnitTestMixin)
 class ZipCodeControllerTests {
 
+    void setUp() {
+        // Setup logic here
+    }
+
+    void tearDown() {
+        // Tear down logic here
+    }
+
     void testSomething() {
-       fail "Implement me"
     }
 }

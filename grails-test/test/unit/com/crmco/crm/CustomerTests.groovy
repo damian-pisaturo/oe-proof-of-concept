@@ -8,6 +8,5 @@ package com.crmco.crm
 class CustomerTests {
 
     void testSomething() {
-       fail "Implement me"
     }
 }

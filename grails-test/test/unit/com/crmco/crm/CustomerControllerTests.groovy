@@ -1,18 +1,13 @@
 package com.crmco.crm
 
 
-
-import org.junit.*
-import grails.test.mixin.*
-
 @TestFor(CustomerController)
 @Mock(Customer)
 class CustomerControllerTests {
 
     def populateValidParams(params) {
         assert params != null
-        // TODO: Populate valid properties like...
-        //params["name"] = 'someValidName'
+        params["firstName"] = 'firstName'
     }
 
     void testIndex() {
@@ -101,7 +96,7 @@ class CustomerControllerTests {
 
         // test invalid parameters in update
         params.id = customer.id
-        //TODO: add invalid values to params object
+        params.firstName = null
 
         controller.update()
 
