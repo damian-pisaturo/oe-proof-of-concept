@@ -1,5 +1,7 @@
 package com.crmco.crm
 
+import grails.converters.JSON
+
 import org.springframework.dao.DataIntegrityViolationException
 
 /**
@@ -43,8 +45,11 @@ class CustomerController {
             redirect(action: "list")
             return
         }
-
-        [customerInstance: customerInstance]
+		
+		withFormat {
+			html { [customerInstance: customerInstance] }
+			json { render (customerInstance as JSON) }
+		}
     }
 
     def edit(Long id) {
