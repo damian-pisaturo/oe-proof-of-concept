@@ -63,12 +63,24 @@ grails.hibernate.cache.queries = false
 
 environments {
     development {
+		grails.config.locations = [
+			"file:${userHome}/.grails/${appName}-dev.groovy"
+		]
         grails.logging.jul.usebridge = true
     }
     production {
+		grails.config.locations = [
+			"file:${userHome}/.grails/${appName}-prod.groovy"
+		]
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
+	test {
+		grails.config.locations = [
+			"file:${userHome}/.grails/${appName}-test.groovy"
+		]
+		grails.logging.jul.usebridge = true
+	}
 }
 
 // log4j configuration
