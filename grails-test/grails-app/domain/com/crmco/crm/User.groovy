@@ -19,6 +19,8 @@ class User {
 	static mapping = {
 		password column: '`password`'
 	}
+	
+	static auditable = true
 
 	Set<Role> getAuthorities() {
 		UserRole.findAllByUser(this).collect { it.role } as Set
