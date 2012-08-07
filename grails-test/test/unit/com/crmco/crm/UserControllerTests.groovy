@@ -1,5 +1,7 @@
 package com.crmco.crm
 
+import grails.test.mixin.*
+
 
 @TestFor(UserController)
 @Mock(User)

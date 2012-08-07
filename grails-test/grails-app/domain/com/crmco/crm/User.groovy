@@ -10,6 +10,13 @@ class User {
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
+	
+	Date createdAt
+	Date updatedAt
+	String firstName
+	String lastName
+	String phoneNumber
+	String mobilePhoneNumber
 
 	static constraints = {
 		username blank: false, unique: true
