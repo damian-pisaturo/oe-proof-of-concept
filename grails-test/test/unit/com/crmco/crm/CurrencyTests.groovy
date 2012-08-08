@@ -12,6 +12,5 @@ import org.junit.*
 class CurrencyTests {
 
     void testSomething() {
-       fail "Implement me"
     }
 }

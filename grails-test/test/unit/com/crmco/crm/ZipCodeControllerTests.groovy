@@ -1,5 +1,6 @@
 package com.crmco.crm
 
+import grails.test.mixin.TestMixin
 import grails.test.mixin.support.*
 
 /**

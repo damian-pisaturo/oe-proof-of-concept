@@ -12,6 +12,5 @@ import org.junit.*
 class BatchTests {
 
     void testSomething() {
-       fail "Implement me"
     }
 }

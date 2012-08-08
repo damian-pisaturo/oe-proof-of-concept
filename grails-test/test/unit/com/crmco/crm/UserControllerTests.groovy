@@ -1,5 +1,7 @@
 package com.crmco.crm
 
+import java.util.Date;
+
 import grails.test.mixin.*
 
 
@@ -12,6 +14,15 @@ class UserControllerTests {
         params["username"] = 'testUsername'
 		params["password"] = 'testPassword'
 		params["enabled"] = true
+		params["accountExpired"] = false
+		params["accountLocked"] = false
+		params["passwordExpired"] = false
+		params["createdAt"] = new Date()
+		params["updatedAt"] = new Date()
+		params["firstName"] = "testFirstName"
+		params["lastName"] = "testLastName"
+		params["phoneNumber"] = "testPhone"
+		params["mobilePhoneNumber"] = "testMobilePhone"
     }
 
     void testIndex() {

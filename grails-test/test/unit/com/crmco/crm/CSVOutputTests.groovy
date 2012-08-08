@@ -12,6 +12,5 @@ import org.junit.*
 class CSVOutputTests {
 
     void testSomething() {
-       fail "Implement me"
     }
 }

@@ -12,6 +12,5 @@ import org.junit.*
 class OrderTests {
 
     void testSomething() {
-       fail "Implement me"
     }
 }

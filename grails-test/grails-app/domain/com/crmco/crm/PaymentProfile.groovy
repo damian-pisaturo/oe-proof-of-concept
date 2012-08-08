@@ -7,7 +7,7 @@ class PaymentProfile {
 	String phoneNumber
 	boolean recurrentPayment
 	Integer payDay
-	Integer monthlyFrecuence
+	Integer monthlyFrequency
 	Integer maxBillings
 	City city
 	static hasMany = [paymentMethods: PaymentMethod]

@@ -12,6 +12,5 @@ import org.junit.*
 class SettingsTests {
 
     void testSomething() {
-       fail "Implement me"
     }
 }

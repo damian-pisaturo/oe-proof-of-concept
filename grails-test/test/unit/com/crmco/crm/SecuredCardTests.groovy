@@ -12,6 +12,5 @@ import org.junit.*
 class SecuredCardTests {
 
     void testSomething() {
-       fail "Implement me"
     }
 }

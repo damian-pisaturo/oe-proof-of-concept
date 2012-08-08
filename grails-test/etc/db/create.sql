@@ -535,7 +535,7 @@ CREATE TABLE `payment_profile` (
   `address` varchar(255) NOT NULL,
   `city_id` bigint(20) NOT NULL,
   `max_billings` int(11) NOT NULL,
-  `monthly_frecuence` int(11) NOT NULL,
+  `monthly_frequency` int(11) NOT NULL,
   `pay_day` int(11) NOT NULL,
   `phone_number` varchar(255) NOT NULL,
   `recurrent_payment` bit(1) NOT NULL,
