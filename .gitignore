@@ -18,4 +18,5 @@ target-eclipse
 
 log.roo
 .DS_Store
+aws-java-sdk-1.3.15
 
