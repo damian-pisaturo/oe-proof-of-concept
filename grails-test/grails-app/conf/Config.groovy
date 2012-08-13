@@ -121,3 +121,9 @@ auditLog {
 		return username
 	}
 }
+
+awssdk {
+    accessKey = {ACCESS_KEY}
+    secretKey = {SECRET_KEY}
+	// To see all the config options go to http://benorama.github.com/grails-aws-sdk/guide/configuration.html
+}
